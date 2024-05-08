@@ -37,7 +37,7 @@ public abstract class Funcionario {
 
     @Override
     public String toString() {
-        return "\nNome: " + nome + "\nMatricula: " + matricula + "\nHoras Trabalhadas: " + horasTrabalho;
+        return "\nNome: " + nome + "\nMatricula: " + matricula + "\nHoras Trabalhadas: " + horasTrabalho + "\nSalario: " + calcularSalario();
     }
 
 

@@ -144,7 +144,7 @@ public class Sistema {
         }
     }
 
-    private static void excluirFuncionario() {
+    private static void excluirUmFuncionario() {
 
         System.out.print("\nInforme a matricula do func. que deseja excluir: ");
         int matricula = Console.lerInt();
@@ -160,6 +160,19 @@ public class Sistema {
 
         System.out.println("\nFuncionário excluído com sucesso!");
 
+    }
+
+    private static void excluirFuncionario(){
+
+        if (Cadastro.getListaFuncionarios().size() == 0) {
+            System.out.println("Não há Funcionarios para excluir");
+            return;
+        }
+
+        Cadastro.getListaFuncionarios().clear();
+        System.out.println("Funcionarios da lista foram excluidos com sucesso");
+        
+        
     }
 
     private static void verificarOpcao(int op) {
@@ -193,19 +206,13 @@ public class Sistema {
             break;
             
             case 6:
+            excluirUmFuncionario();
             
-             excluirFuncionario();
                 break;
 
             case 7:
-            if (Cadastro.getListaFuncionarios().size() == 0) {
-                System.out.println("Não há Funcionarios para excluir");
-                return;
-            }
+            excluirFuncionario();
 
-            Cadastro.getListaFuncionarios().clear();
-            System.out.println("Funcionarios da lista foram excluidos com sucesso");
-            
             break;
             case 0:
 
